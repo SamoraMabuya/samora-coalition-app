@@ -12,6 +12,7 @@ import {
 
 import { DiagnosisHistoryEntry } from "@/types/api";
 import Image from "next/image";
+import VitalSigns from "./vitalSigns";
 
 interface DiagnosisHistoryProps {
   diagnosisHistory: DiagnosisHistoryEntry[];
@@ -30,7 +31,7 @@ const DiagnosisHistoryChart = ({ diagnosisHistory }: DiagnosisHistoryProps) => {
     diagnosisHistory[diagnosisHistory.length - 1].blood_pressure;
 
   return (
-    <div className="space-y-6 bg-white p-6 rounded-3xl">
+    <div className="w-[70%] space-y-6 bg-white p-6 rounded-3xl">
       <h2 className="text-2xl font-extrabold">Diagnosis History</h2>
 
       <div className="space-y-4">
@@ -105,7 +106,7 @@ const DiagnosisHistoryChart = ({ diagnosisHistory }: DiagnosisHistoryProps) => {
                   <div className="w-3 h-3 rounded-full bg-[#C26EB4]" />
                   <span className="font-bold">Systolic</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="block items-center gap-2">
                   <span className="font-bold text-2xl">
                     {latestData.systolic.value}
                   </span>
@@ -127,7 +128,7 @@ const DiagnosisHistoryChart = ({ diagnosisHistory }: DiagnosisHistoryProps) => {
                   <div className="w-3 h-3 rounded-full bg-[#7E6CAB]" />
                   <span className="font-bold">Diastolic</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="block items-center gap-2">
                   <span className="font-bold text-2xl">
                     {latestData.diastolic.value}
                   </span>
@@ -147,6 +148,7 @@ const DiagnosisHistoryChart = ({ diagnosisHistory }: DiagnosisHistoryProps) => {
           </div>
         </div>
       </div>
+      <VitalSigns diagnosisHistory={diagnosisHistory} />
     </div>
   );
 };
