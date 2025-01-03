@@ -4,6 +4,7 @@ import PatientList from "@/components/patientSearchList";
 import DiagnosisHistoryChart from "@/components/diagnosesHistoryChart";
 import Profile from "@/components/profile";
 import DiagnosticList from "@/components/diagnosticList";
+import LabResults from "@/components/labResults";
 
 const Home = async () => {
   const jessicaData = await getJessicaData();
@@ -19,7 +20,10 @@ const Home = async () => {
           />
           <DiagnosticList diagnostics={jessicaData.diagnostic_list} />
         </div>
-        <Profile patient={jessicaData} />
+        <div className="space-y-4">
+          <Profile patient={jessicaData} />
+          <LabResults results={jessicaData.lab_results} />
+        </div>
       </div>
     </main>
   );
