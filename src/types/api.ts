@@ -1,4 +1,3 @@
-// src/types/api.ts
 export interface BloodPressure {
   systolic: {
     value: number;

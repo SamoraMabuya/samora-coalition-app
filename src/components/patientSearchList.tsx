@@ -6,11 +6,10 @@ const PatientList = async () => {
   const patients = await getPatientData();
 
   return (
-    <div className="w-[300px] bg-white rounded-3xl shadow-sm">
+    <div className="bg-white rounded-3xl shadow-sm">
       <div className="p-4 space-y-4">
-        {/* Header */}
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold text-gray-900">Patients</h2>
+          <h2 className="text-2xl font-extrabold text-gray-900">Patients</h2>
           <div className="relative">
             <Image
               src="/assets/icons/search.svg"

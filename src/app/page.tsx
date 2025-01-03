@@ -1,14 +1,21 @@
-import Image from "next/image";
 import getJessicaData from "../utils/data";
-import Head from "next/head";
 import Header from "@/components/header";
 import PatientList from "@/components/patientSearchList";
+import DiagnosisHistoryChart from "@/components/diagnosesHistoryChart";
 
-const Home = async () => (
-  <main className="space-y-4">
-    <Header />
+const Home = async () => {
+  const jessicaData = await getJessicaData();
 
-    <PatientList />
-  </main>
-);
+  return (
+    <main className="space-y-4">
+      <Header />
+      <div className="grid grid-cols-[350px,1fr,350px] gap-4">
+        <PatientList />
+        <DiagnosisHistoryChart
+          diagnosisHistory={jessicaData.diagnosis_history}
+        />
+      </div>
+    </main>
+  );
+};
 export default Home;
