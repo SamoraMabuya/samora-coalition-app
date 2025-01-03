@@ -6,7 +6,7 @@ const PatientList = async () => {
   const patients = await getPatientData();
 
   return (
-    <div className="bg-white rounded-3xl shadow-sm">
+    <div className="bg-white rounded-3xl shadow-sm ">
       <div className="p-4 space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="text-2xl font-extrabold text-gray-900">Patients</h2>

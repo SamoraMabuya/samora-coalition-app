@@ -20,17 +20,17 @@ const VitalSignCard = ({
   return (
     <div className={`${bgColor} p-6 rounded-3xl space-y-4`}>
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Image src={icon} alt={title} width={24} height={24} />
+        <div className="block items-center gap-2">
+          <Image src={icon} alt={title} width={70} height={70} />
           <h3 className="font-medium">{title}</h3>
         </div>
       </div>
       <div className="space-y-1">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 mb-8">
           <span className="text-3xl font-extrabold">{data.value}</span>
           <span className="text-lg">{unit}</span>
         </div>
-        <span className="text-sm text-gray-600">{data.levels}</span>
+        <span className="mt-10 text-sm text-gray-600">{data.levels}</span>
       </div>
     </div>
   );

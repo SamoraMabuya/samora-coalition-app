@@ -31,7 +31,7 @@ const DiagnosisHistoryChart = ({ diagnosisHistory }: DiagnosisHistoryProps) => {
     diagnosisHistory[diagnosisHistory.length - 1].blood_pressure;
 
   return (
-    <div className="w-[70%] space-y-6 bg-white p-6 rounded-3xl">
+    <div className="space-y-6 bg-white p-6 rounded-3xl h-fit">
       <h2 className="text-2xl font-extrabold">Diagnosis History</h2>
 
       <div className="space-y-4">

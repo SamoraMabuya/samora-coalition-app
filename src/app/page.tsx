@@ -2,7 +2,7 @@ import getJessicaData from "../utils/data";
 import Header from "@/components/header";
 import PatientList from "@/components/patientSearchList";
 import DiagnosisHistoryChart from "@/components/diagnosesHistoryChart";
-import VitalSigns from "@/components/vitalSigns";
+import Profile from "@/components/profile";
 
 const Home = async () => {
   const jessicaData = await getJessicaData();
@@ -10,11 +10,12 @@ const Home = async () => {
   return (
     <main className="space-y-4">
       <Header />
-      <div className="grid grid-cols-[350px,1fr,350px] gap-4 gap-x-6">
+      <div className="grid grid-cols-[450px,1fr,450px] gap-4 gap-x-6">
         <PatientList />
         <DiagnosisHistoryChart
           diagnosisHistory={jessicaData.diagnosis_history}
         />
+        <Profile patient={jessicaData} />
       </div>
     </main>
   );
