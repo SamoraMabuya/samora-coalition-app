@@ -1,4 +1,4 @@
-import getJessicaData from "../utils/data";
+import getPatientByName from "../utils/getPatientName";
 import Header from "@/components/header";
 import Patients from "@/components/patients";
 import DiagnosisHistory from "@/components/diagnosesHistory";
@@ -7,7 +7,7 @@ import DiagnosticList from "@/components/diagnosticList";
 import LabResults from "@/components/labResults";
 
 const Home = async () => {
-  const jessicaData = await getJessicaData();
+  const jessicaData = await getPatientByName("Jessica Taylor");
 
   return (
     <main className="space-y-4">

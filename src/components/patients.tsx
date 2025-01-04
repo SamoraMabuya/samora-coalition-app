@@ -1,5 +1,5 @@
 import Image from "next/image";
-import getPatientData from "@/utils/api";
+import getPatientData from "@/lib/api";
 import { Patient } from "@/types/api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
