@@ -4,7 +4,7 @@
 
 :root {
   --background: #f6f7f8;
-  --foreground: #171717;
+  --foreground: theme("colors.primary.DEFAULT");
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,7 +15,7 @@
 }
 
 body {
-  color: var(--foreground);
+  color: theme("colors.primary.DEFAULT");
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }

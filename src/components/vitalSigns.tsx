@@ -1,14 +1,14 @@
-import React from "react";
 import Image from "next/image";
 import { DiagnosisHistoryEntry, VitalSign } from "@/types/api";
+import { Card, CardContent } from "@/components/ui/card";
 
-interface VitalSignCardProps {
+type VitalSignCardProps = {
   icon: string;
   title: string;
   data: VitalSign;
   bgColor: string;
   unit: string;
-}
+};
 
 const VitalSignCard = ({
   icon,
@@ -16,55 +16,75 @@ const VitalSignCard = ({
   data,
   bgColor,
   unit,
-}: VitalSignCardProps) => {
-  return (
-    <div className={`${bgColor} p-6 rounded-3xl space-y-4`}>
+}: VitalSignCardProps) => (
+  <Card className={`${bgColor}`}>
+    <CardContent className="p-6 space-y-4">
       <div className="flex items-center justify-between">
-        <div className="block items-center gap-2">
-          <Image src={icon} alt={title} width={70} height={70} />
+        <div>
+          <Image
+            className="mb-4"
+            src={icon}
+            alt={title}
+            width={80}
+            height={80}
+          />
           <h3 className="font-medium">{title}</h3>
         </div>
       </div>
       <div className="space-y-1">
-        <div className="flex items-center gap-2 mb-8">
-          <span className="text-3xl font-extrabold">{data.value}</span>
-          <span className="text-lg">{unit}</span>
+        <div className="flex items-baseline gap-1 mb-8 text-3xl font-extrabold">
+          <span>{data.value}</span>
+          <span>{unit}</span>
         </div>
-        <span className="mt-10 text-sm text-gray-600">{data.levels}</span>
+        <span className="text-sm text-base-gray">{data.levels}</span>
       </div>
-    </div>
-  );
+    </CardContent>
+  </Card>
+);
+
+type VitalSignsProps = {
+  diagnosisHistory: DiagnosisHistoryEntry[];
 };
 
-interface VitalSignsProps {
-  diagnosisHistory: DiagnosisHistoryEntry[];
-}
 const VitalSigns = ({ diagnosisHistory }: VitalSignsProps) => {
   const latestData = diagnosisHistory[diagnosisHistory.length - 1];
 
+  const vitalsData = [
+    {
+      icon: "/assets/graphics/respiratory-rate.svg",
+      title: "Respiratory Rate",
+      data: latestData.respiratory_rate,
+      bgColor: "bg-[#E0F3FA]",
+      unit: "bpm",
+    },
+    {
+      icon: "/assets/graphics/temperature.svg",
+      title: "Temperature",
+      data: latestData.temperature,
+      bgColor: "bg-[#FFE6E9]",
+      unit: "°F",
+    },
+    {
+      icon: "/assets/graphics/heartbpm.svg",
+      title: "Heart Rate",
+      data: latestData.heart_rate,
+      bgColor: "bg-[#FFE6E9]",
+      unit: "bpm",
+    },
+  ];
+
   return (
     <div className="grid grid-cols-3 gap-4">
-      <VitalSignCard
-        icon="/assets/graphics/respiratory-rate.svg"
-        title="Respiratory Rate"
-        data={latestData.respiratory_rate}
-        bgColor="bg-[#E0F3FA]"
-        unit="bpm"
-      />
-      <VitalSignCard
-        icon="/assets/graphics/temperature.svg"
-        title="Temperature"
-        data={latestData.temperature}
-        bgColor="bg-[#FFE6E9]"
-        unit="°F"
-      />
-      <VitalSignCard
-        icon="/assets/graphics/heartbpm.svg"
-        title="Heart Rate"
-        data={latestData.heart_rate}
-        bgColor="bg-[#FFE6E9]"
-        unit="bpm"
-      />
+      {vitalsData.map((vital) => (
+        <VitalSignCard
+          key={vital.title}
+          icon={vital.icon}
+          title={vital.title}
+          data={vital.data}
+          bgColor={vital.bgColor}
+          unit={vital.unit}
+        />
+      ))}
     </div>
   );
 };

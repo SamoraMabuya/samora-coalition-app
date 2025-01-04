@@ -16,7 +16,7 @@ const PatientCard = ({ patient }: { patient: Patient }) => {
           />
         </Avatar>
         <div>
-          <h3 className="font-medium text-gray-900">{patient.name}</h3>
+          <h3 className="font-medium">{patient.name}</h3>
           <p className="text-sm text-gray-500">
             {patient.gender}, {patient.age}
           </p>
