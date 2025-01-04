@@ -1,6 +1,6 @@
 import getJessicaData from "../utils/data";
 import Header from "@/components/header";
-import Patients from "@/components/patientSearchList";
+import Patients from "@/components/patients";
 import DiagnosisHistoryChart from "@/components/diagnosesHistoryChart";
 import Profile from "@/components/profile";
 import DiagnosticList from "@/components/diagnosticList";
