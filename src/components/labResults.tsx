@@ -1,34 +1,39 @@
-import React from "react";
 import Image from "next/image";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
-interface LabResultsProps {
+type LabResultsProps = {
   results: string[];
-}
+};
 
 const LabResults = ({ results }: LabResultsProps) => {
   return (
-    <div className="bg-white rounded-3xl p-6 space-y-4">
-      <h2 className="text-2xl font-extrabold">Lab Results</h2>
-
-      <div className="max-h-[300px] overflow-y-auto pr-2">
-        {results.map((result, index) => (
-          <div
-            key={index}
-            className="flex items-center justify-between hover:bg-[#F6F7F8] p-4 mb-3 last:mb-0"
-          >
-            <span className="text-gray-900">{result}</span>
-            <button className="hover:opacity-80">
-              <Image
-                src="/assets/icons/download.svg"
-                alt="Download"
-                width={24}
-                height={24}
-              />
-            </button>
-          </div>
-        ))}
-      </div>
-    </div>
+    <Card>
+      <CardHeader>
+        <CardTitle>Lab Results</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="max-h-[300px] overflow-y-auto pr-2">
+          {results.map((result) => (
+            <div
+              key={result}
+              className="flex items-center justify-between hover:bg-[#F6F7F8] p-4 mb-3 last:mb-0"
+            >
+              <span>{result}</span>
+              <Button variant="ghost" size="icon">
+                <Image
+                  src="/assets/icons/download.svg"
+                  alt="Download"
+                  width={24}
+                  height={24}
+                />
+                <span className="sr-only">Download {result}</span>
+              </Button>
+            </div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 

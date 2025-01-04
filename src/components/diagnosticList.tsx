@@ -23,9 +23,7 @@ const DiagnosticList = ({ diagnostics }: DiagnosticListProps) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-2xl font-extrabold">
-          Diagnostic List
-        </CardTitle>
+        <CardTitle>Diagnostic List</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="max-h-[300px] overflow-y-auto px-4">

@@ -41,9 +41,7 @@ const Patients = async () => {
     <Card className="h-fit ">
       <CardHeader className="pb-2">
         <div className="flex items-center justify-between">
-          <CardTitle className="text-2xl font-extrabold text-gray-900">
-            Patients
-          </CardTitle>
+          <CardTitle>Patients</CardTitle>
           <div className="relative">
             <Image
               src="/assets/icons/search.svg"

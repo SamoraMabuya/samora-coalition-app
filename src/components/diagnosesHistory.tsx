@@ -85,9 +85,7 @@ const DiagnosisHistory = ({ diagnosisHistory }: DiagnosisHistoryProps) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-2xl font-extrabold">
-          Diagnosis History
-        </CardTitle>
+        <CardTitle>Diagnosis History</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6 ">
         <div className="space-y-4">
