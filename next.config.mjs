@@ -1,7 +1,7 @@
 const nextConfig = {
   reactStrictMode: true,
   output: "export",
-  basePath: "", // Keep this
+  basePath: "/samora-coalition-app",
   images: {
     unoptimized: true,
     formats: ["image/webp"],
@@ -14,7 +14,6 @@ const nextConfig = {
       },
     ],
   },
-  basePath: "/samora-coalition-app'",
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
