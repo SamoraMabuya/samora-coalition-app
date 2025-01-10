@@ -1,10 +1,8 @@
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
-
 let assetPrefix = "";
 let basePath = "";
 
 if (isGithubActions) {
-  // Add type check for GITHUB_REPOSITORY
   const repo = process.env.GITHUB_REPOSITORY
     ? process.env.GITHUB_REPOSITORY.replace(/.*?\//, "")
     : "samora-coalition-app";
@@ -20,21 +18,31 @@ const nextConfig = {
   basePath: basePath,
   images: {
     unoptimized: true,
-    formats: ["image/webp"],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "fdslypeqjoksqctzlzzo.supabase.co",
-        port: "",
-        pathname: "/**",
-      },
-    ],
+    loader: "custom",
+    loaderFile: "./image-loader.js",
+    // This will make all image paths relative to basePath automatically
+    path: `${basePath}`,
   },
+  // Modify webpack config to handle SVGs globally
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ["@svgr/webpack"],
+      use: [
+        {
+          loader: "@svgr/webpack",
+          options: {
+            svgo: false, // Disable SVGO optimization
+            svgoConfig: {
+              plugins: [{ removeViewBox: false }], // Preserve viewBox
+            },
+          },
+        },
+      ],
     });
+
+    // Add public path to assets
+    config.output.publicPath = isGithubActions ? `${assetPrefix}` : "/";
+
     return config;
   },
 };
