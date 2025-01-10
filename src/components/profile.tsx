@@ -19,7 +19,7 @@ const Profile = ({ patient }: ProfileProps) => {
 
   const patientInfo = [
     {
-      icon: "/assets/icons/birthIcon.svg",
+      icon: "assets/icons/birthIcon.svg",
       title: "Date Of Birth",
       info: formattedBirthDate,
     },
