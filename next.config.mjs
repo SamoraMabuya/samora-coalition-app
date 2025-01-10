@@ -1,8 +1,23 @@
+const isGithubActions = process.env.GITHUB_ACTIONS || false;
+
+let assetPrefix = "";
+let basePath = "";
+
+if (isGithubActions) {
+  // Add type check for GITHUB_REPOSITORY
+  const repo = process.env.GITHUB_REPOSITORY
+    ? process.env.GITHUB_REPOSITORY.replace(/.*?\//, "")
+    : "samora-coalition-app";
+
+  assetPrefix = `/${repo}/`;
+  basePath = `/${repo}`;
+}
+
 const nextConfig = {
   reactStrictMode: true,
   output: "export",
-  basePath: "/samora-coalition-app",
-  assetPrefix: "/samora-coalition-app/", // Add this line to handle assets
+  assetPrefix: assetPrefix,
+  basePath: basePath,
   images: {
     unoptimized: true,
     formats: ["image/webp"],
