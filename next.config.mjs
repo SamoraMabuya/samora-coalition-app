@@ -18,30 +18,40 @@ const nextConfig = {
   basePath: basePath,
   images: {
     unoptimized: true,
-    loader: "custom",
-    loaderFile: "./image-loader.ts",
-    // This will make all image paths relative to basePath automatically
-    path: `${basePath}`,
   },
-  // Modify webpack config to handle SVGs globally
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: [
-        {
-          loader: "@svgr/webpack",
-          options: {
-            svgo: false, // Disable SVGO optimization
-            svgoConfig: {
-              plugins: [{ removeViewBox: false }], // Preserve viewBox
-            },
-          },
-        },
-      ],
+      use: ["@svgr/webpack"],
     });
 
-    // Add public path to assets
-    config.output.publicPath = isGithubActions ? `${assetPrefix}` : "/";
+    // Modify chunk loading behavior
+    config.optimization = {
+      ...config.optimization,
+      splitChunks: {
+        chunks: "all",
+        cacheGroups: {
+          default: false,
+          vendors: false,
+          // Vendor chunk
+          vendor: {
+            name: "vendor",
+            chunks: "all",
+            test: /node_modules/,
+            priority: 20,
+          },
+          // Common chunk
+          common: {
+            name: "common",
+            minChunks: 2,
+            chunks: "all",
+            priority: 10,
+            reuseExistingChunk: true,
+            enforce: true,
+          },
+        },
+      },
+    };
 
     return config;
   },
