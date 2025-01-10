@@ -43,6 +43,9 @@ export default {
         gray: {
           custom: "#707070",
         },
+        purple: {
+          custom: "#7E6CAB",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

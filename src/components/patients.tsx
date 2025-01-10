@@ -8,11 +8,11 @@ const PatientCard = ({ patient }: { patient: Patient }) => {
   return (
     <div className="flex items-center justify-between p-3 rounded-lg  hover:bg-gray-50 cursor-pointer">
       <div className="flex items-center gap-3">
-        <Avatar className="h-10 w-10">
+        <Avatar className="h-10 w-10 relative overflow-hidden">
           <AvatarImage
             src={patient.profile_picture}
             alt={patient.name}
-            className="object-contain"
+            className="object-cover w-full h-full"
           />
         </Avatar>
         <div>

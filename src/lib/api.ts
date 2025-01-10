@@ -1,21 +1,21 @@
-const username = process.env.NEXT_PUBLIC_USERNAME;
-const password = process.env.NEXT_PUBLIC_PASSWORD;
-const API_URL = process.env.NEXT_PUBLIC_URL as string;
+import { Patient } from "@/types/api";
+import { supabase } from "./supabase";
 
-const authHeader = "Basic " + btoa(`${username}:${password}`);
-
-const getPatientData = async () => {
+const getPatientData = async (): Promise<Patient[]> => {
   try {
-    const data = await fetch(API_URL, {
-      headers: {
-        Authorization: authHeader,
-      },
-    });
+    const { data, error } = await supabase
+      .from("patients")
+      .select("*")
+      .order("created_at");
 
-    if (!data.ok) throw new Error(`Error status:${data.status}`);
-    return data.json();
+    if (error) {
+      console.error("Supabase error:", error);
+      throw error;
+    }
+
+    return data || [];
   } catch (error) {
-    console.error("Failed to fetch patient data", error);
+    console.error("Failed to fetch patient data:", error);
     throw error;
   }
 };

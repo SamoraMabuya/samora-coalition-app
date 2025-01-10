@@ -116,15 +116,6 @@ const DiagnosisHistory = ({ diagnosisHistory }: DiagnosisHistoryProps) => {
                       axisLine={false}
                       tick={{ fontSize: 12 }}
                       minTickGap={40}
-                      tickFormatter={(value) => {
-                        const date = new Date(value);
-                        return `${date.toLocaleDateString("en-ZA", {
-                          month: "short",
-                        })}, ${date.toLocaleDateString("en-ZA", {
-                          year: "numeric",
-                        })}`;
-                      }}
-                      reversed={true}
                     />
                     <YAxis
                       tickLine={false}

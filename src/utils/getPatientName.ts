@@ -3,11 +3,15 @@ import getPatientData from "../lib/api";
 
 const getPatientByName = async (name: string): Promise<Patient> => {
   const allPatientData = await getPatientData();
-  const jessicaData = allPatientData.find(
-    (paitent: Patient) => paitent.name === name
+  const patientData = allPatientData.find(
+    (patient: Patient) => patient.name === name
   );
 
-  return jessicaData;
+  if (!patientData) {
+    throw new Error(`Patient ${name} not found`);
+  }
+
+  return patientData;
 };
 
 export default getPatientByName;

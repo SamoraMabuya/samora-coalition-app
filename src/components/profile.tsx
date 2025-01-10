@@ -68,11 +68,11 @@ const Profile = ({ patient }: ProfileProps) => {
     <Card className="h-fit">
       <CardContent className="p-6 space-y-6">
         <div className="flex flex-col items-center text-center space-y-4">
-          <Avatar className="h-32 w-32">
+          <Avatar className="h-32 w-32 relative overflow-hidden">
             <AvatarImage
               src={patient.profile_picture}
               alt={patient.name}
-              className="object-contain"
+              className="object-cover w-full h-full"
             />
           </Avatar>
           <h2 className="text-2xl font-extrabold">{patient.name}</h2>
@@ -88,7 +88,7 @@ const Profile = ({ patient }: ProfileProps) => {
           ))}
         </div>
         <Button
-          className="px-8 mx-auto flex bg-[#01F0D0] hover:bg-[#00d8bb] text-black font-bold rounded-2xl"
+          className="px-8 mx-auto flex bg-purple-custom hover:bg-purple-custom text-white hover:text-white font-bold rounded-2xl"
           variant="ghost"
         >
           Show All Information

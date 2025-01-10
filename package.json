@@ -1,5 +1,5 @@
 {
-  "name": "samora-coalition-app",
+  "name": "medcare",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,8 @@
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.1",
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.47.12",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.469.0",

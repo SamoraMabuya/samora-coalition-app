@@ -48,15 +48,19 @@ const Navigation = () => (
         key={item.label}
         variant={item.variant}
         className={`flex items-center space-x-2 ${
-          item.isActive ? "bg-teal-400 hover:bg-teal-500 rounded-full" : ""
+          item.isActive
+            ? "bg-purple-custom hover:bg-purple-custom hover:text-white rounded-full text-white"
+            : ""
         }`}
       >
-        <Image
-          src={item.icon}
-          alt={item.label.toLowerCase()}
-          width={16}
-          height={16}
-        />
+        <div className={`${item.isActive ? "brightness-0 invert" : ""}`}>
+          <Image
+            src={item.icon}
+            alt={item.label.toLowerCase()}
+            width={16}
+            height={16}
+          />
+        </div>
         <span>{item.label}</span>
       </Button>
     ))}
@@ -68,8 +72,9 @@ const UserProfile = () => (
     <div className="flex items-center space-x-2">
       <Avatar className="h-10 w-10">
         <AvatarImage
-          src="/assets/headshots/senior-woman-doctor-and-portrait-smile-for-health.png"
+          src="https://fdslypeqjoksqctzlzzo.supabase.co/storage/v1/object/sign/doctors/pexels-shvetsa-4167541.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJkb2N0b3JzL3BleGVscy1zaHZldHNhLTQxNjc1NDEuanBnIiwiaWF0IjoxNzM2NTExNjg2LCJleHAiOjIwNTE4NzE2ODZ9.p0YNd0iJjzw0DOfLVqyMvcfo61os_gLGWMNK7RMOfkQ"
           alt="Dr. Jose Simmons"
+          className="object-cover  h-full w-full"
         />
       </Avatar>
       <div className="flex flex-col">
