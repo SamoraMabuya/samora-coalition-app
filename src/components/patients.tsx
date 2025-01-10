@@ -24,7 +24,7 @@ const PatientCard = ({ patient }: { patient: Patient }) => {
       </div>
       <button className="p-1 hover:bg-gray-100 rounded-full">
         <Image
-          src="/assets/icons/more.svg"
+          src="assets/icons/more.svg"
           alt="More options"
           width={20}
           height={20}
@@ -44,7 +44,7 @@ const Patients = async () => {
           <CardTitle>Patients</CardTitle>
           <div className="relative">
             <Image
-              src="/assets/icons/search.svg"
+              src="assets/icons/search.svg"
               alt="Search"
               width={20}
               height={20}
