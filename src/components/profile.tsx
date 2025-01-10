@@ -24,22 +24,22 @@ const Profile = ({ patient }: ProfileProps) => {
       info: formattedBirthDate,
     },
     {
-      icon: "/assets/icons/femaleIcon.svg",
+      icon: "assets/icons/femaleIcon.svg",
       title: "Gender",
       info: patient.gender,
     },
     {
-      icon: "/assets/icons/phoneIcon.svg",
+      icon: "assets/icons/phoneIcon.svg",
       title: "Contact Info.",
       info: patient.phone_number,
     },
     {
-      icon: "/assets/icons/phoneIcon.svg",
+      icon: "assets/icons/phoneIcon.svg",
       title: "Emergency Contacts",
       info: patient.emergency_contact,
     },
     {
-      icon: "/assets/icons/insuranceIcon.svg",
+      icon: "assets/icons/insuranceIcon.svg",
       title: "Insurance Provider",
       info: patient.insurance_type,
     },

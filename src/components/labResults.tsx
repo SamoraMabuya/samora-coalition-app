@@ -22,7 +22,7 @@ const LabResults = ({ results }: LabResultsProps) => {
               <span>{result}</span>
               <Button variant="ghost" size="icon">
                 <Image
-                  src="/assets/icons/download.svg"
+                  src="assets/icons/download.svg"
                   alt="Download"
                   width={24}
                   height={24}

@@ -44,7 +44,7 @@ const BloodPressureIndicator = ({
       <span className="font-bold text-2xl">{value}</span>
       <div className="flex items-center gap-1  pt-1 mt-1">
         <Image
-          src={`/assets/icons/arrow${trend}.svg`}
+          src={`assets/icons/arrow${trend}.svg`}
           alt={`${trend} Arrow`}
           width={12}
           height={12}
@@ -97,7 +97,7 @@ const DiagnosisHistory = ({ diagnosisHistory }: DiagnosisHistoryProps) => {
                   <button className="flex items-center gap-2">
                     <span>Last 6 months</span>
                     <Image
-                      src="/assets/icons/expand_more.svg"
+                      src="assets/icons/expand_more.svg"
                       alt="Expand"
                       width={12}
                       height={12}

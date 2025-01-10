@@ -33,7 +33,7 @@ const navItems: NavItem[] = [
 const Logo = () => (
   <div className="flex items-center">
     <Image
-      src="/assets/graphics/logo.svg"
+      src="assets/graphics/logo.svg"
       alt="Tech.Care Logo"
       width={200}
       height={200}
@@ -86,7 +86,7 @@ const UserProfile = () => (
     <div>
       <Button variant="ghost" size="icon">
         <Image
-          src="/assets/icons/settings.svg"
+          src="assets/icons/settings.svg"
           alt="Settings"
           width={18}
           height={18}
@@ -94,7 +94,7 @@ const UserProfile = () => (
       </Button>
       <Button variant="ghost" size="icon" className="w-2">
         <Image
-          src="/assets/icons/more_vert.svg"
+          src="assets/icons/more_vert.svg"
           alt="More options"
           width={4}
           height={4}

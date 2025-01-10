@@ -51,21 +51,21 @@ const VitalSigns = ({ diagnosisHistory }: VitalSignsProps) => {
 
   const vitalsData = [
     {
-      icon: "/assets/graphics/respiratory-rate.svg",
+      icon: "assets/graphics/respiratory-rate.svg",
       title: "Respiratory Rate",
       data: latestData.respiratory_rate,
       bgColor: "bg-[#E0F3FA]",
       unit: "bpm",
     },
     {
-      icon: "/assets/graphics/temperature.svg",
+      icon: "assets/graphics/temperature.svg",
       title: "Temperature",
       data: latestData.temperature,
       bgColor: "bg-[#FFE6E9]",
       unit: "°F",
     },
     {
-      icon: "/assets/graphics/heartbpm.svg",
+      icon: "assets/graphics/heartbpm.svg",
       title: "Heart Rate",
       data: latestData.heart_rate,
       bgColor: "bg-[#FFE6E9]",
