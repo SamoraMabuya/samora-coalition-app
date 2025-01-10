@@ -14,6 +14,7 @@ const nextConfig = {
       },
     ],
   },
+  basePath: "/samora-coalition-app'",
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
