@@ -19,7 +19,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
     loader: "custom",
-    loaderFile: "./image-loader.js",
+    loaderFile: "./image-loader.ts",
     // This will make all image paths relative to basePath automatically
     path: `${basePath}`,
   },
