@@ -2,6 +2,7 @@ const nextConfig = {
   reactStrictMode: true,
   output: "export",
   basePath: "/samora-coalition-app",
+  assetPrefix: "/samora-coalition-app/", // Add this line to handle assets
   images: {
     unoptimized: true,
     formats: ["image/webp"],
