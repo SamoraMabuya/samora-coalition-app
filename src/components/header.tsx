@@ -74,7 +74,7 @@ const UserProfile = () => (
         <AvatarImage
           src="https://fdslypeqjoksqctzlzzo.supabase.co/storage/v1/object/sign/doctors/pexels-shvetsa-4167541.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJkb2N0b3JzL3BleGVscy1zaHZldHNhLTQxNjc1NDEuanBnIiwiaWF0IjoxNzM2NTExNjg2LCJleHAiOjIwNTE4NzE2ODZ9.p0YNd0iJjzw0DOfLVqyMvcfo61os_gLGWMNK7RMOfkQ"
           alt="Dr. Jose Simmons"
-          className="object-cover  h-full w-full"
+          className="object-cover h-full w-full"
         />
       </Avatar>
       <div className="flex flex-col">
@@ -105,7 +105,7 @@ const UserProfile = () => (
 );
 
 const Header = () => (
-  <header className="rounded-e-3xl rounded-s-3x bg-white px-4 py-2 justify-between flex items-center">
+  <header className="rounded-e-3xl rounded-s-3xl bg-white px-4 py-2 justify-between flex items-center">
     <Logo />
     <Navigation />
     <UserProfile />
