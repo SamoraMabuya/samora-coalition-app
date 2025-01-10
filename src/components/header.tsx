@@ -10,7 +10,7 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  { label: "Overview", icon: "/assets/icons/home.svg", variant: "ghost" },
+  { label: "Overview", icon: "assets/icons/home.svg", variant: "ghost" },
   {
     label: "Patients",
     icon: "assets/icons/group.svg",
@@ -22,7 +22,7 @@ const navItems: NavItem[] = [
     icon: "assets/icons/calendar_today.svg",
     variant: "ghost",
   },
-  { label: "Message", icon: "/assets/icons/chat_bubble.svg", variant: "ghost" },
+  { label: "Message", icon: "assets/icons/chat_bubble.svg", variant: "ghost" },
   {
     label: "Transactions",
     icon: "assets/icons/credit_card.svg",
